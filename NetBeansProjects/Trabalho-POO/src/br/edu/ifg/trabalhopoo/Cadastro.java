@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author danilo
- */
 public class Cadastro {
 
     private List<Funcionario> listaDeFuncionarios;
@@ -22,8 +18,8 @@ public class Cadastro {
         
         System.out.println("\n// Cadastrando Funcionário //\n");
         
-        System.out.println("Informe o Código: ");
-        funcionario.setCodigo(scanner.nextInt());
+        System.out.println("Informe o ID: ");
+        funcionario.setId(scanner.nextInt());
         System.out.println("Informe o Nome: ");
         scanner = new Scanner(System.in);
         funcionario.setNome(scanner.nextLine());
@@ -34,7 +30,7 @@ public class Cadastro {
         
         Setor setor = new Setor();
         System.out.println("\n- Setor do Funcionário:\n");
-        System.out.println("Código: ");
+        System.out.println("Código do Setor: ");
         setor.setCodigo(scanner.nextInt());
         System.out.println("Nome do Setor: ");
         scanner = new Scanner(System.in);
@@ -51,25 +47,22 @@ public class Cadastro {
         Funcionario funcionario = new Funcionario();
         
         System.out.println("\n////////// Deletar //////////");
-        System.out.println("Código do Funcionário: ");
-        funcionario.setCodigo(scanner.nextInt());
+        System.out.println("ID do Funcionário: ");
+        funcionario.setId(scanner.nextInt());
         listaDeFuncionarios.remove(funcionario);
         System.out.println("Deletado com sucesso!");
         System.out.println("..............................\n");
     }
     
-    public void verDetalhes(int codigo){
-        
-    }
     
     public void listar(){
         for (Funcionario itemDaLista : listaDeFuncionarios){
             System.out.println("\n//////// Funcionario ////////");
             
-            System.out.println("Código: "+itemDaLista.getCodigo());
+            System.out.println("Código: "+itemDaLista.getId());
             System.out.println("Nome: "+itemDaLista.getNome());
             System.out.println("Idade: "+itemDaLista.getIdade());
-            System.out.println("Fabricante: "+itemDaLista.getSetor().getNome());
+            System.out.println("Setor: "+itemDaLista.getSetor().getNome());
             
             System.out.println("..............................\n");
         }

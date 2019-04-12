@@ -20,8 +20,8 @@ public class Funcionario extends Pessoa {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.setor);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.getId());
         return hash;
     }
 
@@ -37,11 +37,9 @@ public class Funcionario extends Pessoa {
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (!Objects.equals(this.setor, other.setor)) {
+        if (!Objects.equals(this.getId(), other.getId())) {
             return false;
         }
         return true;
-    }
-    
-    
+    } 
 }
